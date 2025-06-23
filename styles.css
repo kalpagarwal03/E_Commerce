@@ -1,0 +1,368 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #18181c 0%, #23232b 100%);
+    color: #f3f3f3;
+    min-height: 100vh;
+}
+header {
+    background: linear-gradient(90deg, #23232b 0%, #18181c 100%);
+    color: #fff;
+    padding: 1.5rem 0 1.2rem 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    border-radius: 0 0 18px 18px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    font-size: 1.1rem;
+}
+nav a {
+    color: #ffb88c;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.3em 0.8em;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+nav a:hover {
+    background: #ff6f61;
+    color: #fff;
+}
+main {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+#men h2, #women h2, #kids h2, #more-products h2 {
+    text-align: left;
+    margin-bottom: 1.2rem;
+    color: #ffb88c;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 8px #ff6f6133;
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+.product-card {
+    background: #23232b;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px #ff6f6122, 0 1.5px 6px #0008;
+    padding: 1.2rem 1rem 1.5rem 1rem;
+    text-align: center;
+    transition: box-shadow 0.25s, transform 0.18s;
+    position: relative;
+    overflow: hidden;
+    border: 1.5px solid #23232b;
+}
+.product-card:hover {
+    box-shadow: 0 8px 32px #ff6f6166, 0 2px 12px #000a;
+    transform: translateY(-6px) scale(1.025);
+    border: 1.5px solid #ff6f61;
+}
+.product-card img {
+    width: 100%;
+    max-width: 170px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 16px #ff6f6144, 0 1px 8px #0008;
+    transition: box-shadow 0.2s;
+    background: #18181c;
+}
+.product-card h3 {
+    margin: 0.5rem 0 0.25rem 0;
+    font-size: 1.15rem;
+    color: #ffb88c;
+    text-shadow: 0 1px 8px #ff6f6133;
+}
+.product-card p {
+    color: #bbb;
+    font-size: 0.98rem;
+    margin: 0.25rem 0 0.5rem 0;
+}
+.product-card span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: #ff6f61;
+    font-size: 1.1rem;
+    text-shadow: 0 1px 8px #ffb88c33;
+}
+.product-card button, .view-btn {
+    box-shadow: 0 2px 8px #ff6f6133, 0 1px 4px #0006;
+    margin-top: 0.2rem;
+    background: linear-gradient(90deg, #ff6f61 0%, #ffb88c 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.product-card button:active, .view-btn:active {
+    transform: scale(0.97);
+}
+.product-card button:hover, .view-btn:hover {
+    background: #ffb88c;
+    color: #18181c;
+}
+#cart-btn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    background: #18181c;
+    color: #ffb88c;
+    border: 2px solid #ff6f61;
+    border-radius: 50px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #ff6f6133, 0 1px 4px #0006;
+}
+#cart-btn:hover {
+    background: #ff6f61;
+    color: #fff;
+    border: 2px solid #ffb88c;
+}
+#cart-count {
+    background: #ff6f61;
+    color: #fff;
+    border-radius: 50%;
+    padding: 0 0.5em;
+    font-size: 1rem;
+    min-width: 1.5em;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 1px 4px #0006;
+}
+.cart-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(24,24,28,0.85);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+.cart-modal.active {
+    display: flex;
+}
+.cart-content {
+    background: #23232b;
+    border-radius: 12px;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    min-width: 320px;
+    max-width: 90vw;
+    box-shadow: 0 4px 24px #ff6f6122, 0 2px 12px #000a;
+    position: relative;
+    animation: popIn 0.25s;
+    color: #fff;
+}
+.close-cart {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: #ffb88c;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-cart:hover {
+    color: #ff6f61;
+}
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #2d2d36;
+    font-size: 1.05rem;
+    color: #ffb88c;
+}
+.cart-total {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #ff6f61;
+}
+#checkout-btn {
+    background: linear-gradient(90deg, #ff6f61 0%, #ffb88c 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #ff6f6133, 0 1px 4px #0006;
+    transition: background 0.2s;
+}
+#checkout-btn:hover {
+    background: #ffb88c;
+    color: #18181c;
+}
+footer {
+    background: linear-gradient(90deg, #23232b 0%, #18181c 100%);
+    color: #ffb88c;
+    text-align: center;
+    padding: 1.2rem 0 1rem 0;
+    margin-top: 2rem;
+    border-radius: 18px 18px 0 0;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -2px 12px #000a;
+}
+.product-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(24,24,28,0.85);
+    justify-content: center;
+    align-items: center;
+}
+.product-modal.active {
+    display: flex;
+}
+.product-modal-content {
+    background: #23232b;
+    border-radius: 8px;
+    padding: 2rem 2rem 1.5rem 2rem;
+    min-width: 320px;
+    max-width: 95vw;
+    box-shadow: 0 4px 24px #ff6f6122, 0 2px 12px #000a;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+.close-product-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: #ffb88c;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-product-modal:hover {
+    color: #ff6f61;
+}
+#modal-product-img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 16px #ff6f6144, 0 1px 8px #0008;
+    background: #18181c;
+}
+#modal-product-name {
+    margin: 0.5rem 0 0.25rem 0;
+    color: #ffb88c;
+    text-shadow: 0 1px 8px #ff6f6133;
+}
+#modal-product-desc {
+    color: #bbb;
+    font-size: 1rem;
+    margin: 0.25rem 0 0.5rem 0;
+}
+#modal-product-price {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: #ff6f61;
+    font-size: 1.2rem;
+    text-shadow: 0 1px 8px #ffb88c33;
+}
+.creator-banner {
+    background: linear-gradient(90deg, #ff6f61 0%, #ffb88c 100%);
+    color: #fff;
+    padding: 1rem 0.5rem 0.7rem 0.5rem;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.1rem;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 2px 8px #ff6f6122;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 10;
+}
+.creator-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-right: 1.5rem;
+    text-shadow: 1px 1px 6px #0008;
+}
+.creator-contact {
+    margin: 0 0.7rem;
+    font-size: 1.05rem;
+}
+.creator-contact a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.creator-contact a:hover {
+    color: #ffb88c;
+    background: #fff2;
+    border-radius: 3px;
+    padding: 0 0.2em;
+}
+@media (max-width: 600px) {
+    .creator-banner {
+        font-size: 0.98rem;
+        padding: 0.7rem 0.2rem 0.5rem 0.2rem;
+    }
+    .creator-title {
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+    .creator-contact {
+        display: block;
+        margin: 0.1rem 0;
+    }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes popIn {
+    from { transform: scale(0.95); opacity: 0.7; }
+    to { transform: scale(1); opacity: 1; }
+} 

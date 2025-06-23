@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothify - E-Commerce Clothing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="creator-banner">
+        <span class="creator-title">Made by Kalp Agarwal</span>
+        <span class="creator-contact">Email: <a href="mailto:kalpagarwal19@gmail.com">kalpagarwal19@gmail.com</a></span>
+        <span class="creator-contact">Ph. No: <a href="tel:7985535184">7985535184</a></span>
+    </div>
+    <header>
+        <h1>Clothify</h1>
+        <nav>
+            <ul>
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
+            </ul>
+        </nav>
+        <button id="cart-btn" aria-label="View cart">
+            🛒 <span id="cart-count">0</span>
+        </button>
+    </header>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span id="close-cart" class="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <div class="cart-total">
+                Total: $<span id="cart-total">0.00</span>
+            </div>
+            <button id="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <main>
+        <section id="men">
+            <h2>Men's Clothing</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Men's T-Shirt">
+                    <h3>Men's T-Shirt</h3>
+                    <p>Classic fit, 100% cotton</p>
+                    <span>$19.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Men's Jeans">
+                    <h3>Men's Jeans</h3>
+                    <p>Slim fit, stretch denim</p>
+                    <span>$39.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Men's Jacket">
+                    <h3>Men's Jacket</h3>
+                    <p>Water-resistant, stylish</p>
+                    <span>$59.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" alt="Men's Hoodie">
+                    <h3>Men's Hoodie</h3>
+                    <p>Soft fleece, pullover</p>
+                    <span>$29.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Men's Shorts">
+                    <h3>Men's Shorts</h3>
+                    <p>Lightweight, breathable</p>
+                    <span>$17.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+            </div>
+        </section>
+        <section id="women">
+            <h2>Women's Clothing</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Women's Dress">
+                    <h3>Women's Dress</h3>
+                    <p>Elegant summer dress</p>
+                    <span>$29.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Women's Top">
+                    <h3>Women's Top</h3>
+                    <p>Lightweight, breathable</p>
+                    <span>$15.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Women's T-Shirt">
+                    <h3>Women's T-Shirt</h3>
+                    <p>Soft cotton, regular fit</p>
+                    <span>$18.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Women's Skirt">
+                    <h3>Women's Skirt</h3>
+                    <p>Floral print, midi length</p>
+                    <span>$22.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1469398715555-76331a6c7c9b?auto=format&fit=crop&w=400&q=80" alt="Women's Hoodie">
+                    <h3>Women's Hoodie</h3>
+                    <p>Cozy fleece, pullover</p>
+                    <span>$27.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+            </div>
+        </section>
+        <section id="kids">
+            <h2>Kids' Clothing</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1503457574465-494bba506e52?auto=format&fit=crop&w=400&q=80" alt="Kids' T-Shirt">
+                    <h3>Kids' T-Shirt</h3>
+                    <p>Fun prints, soft cotton</p>
+                    <span>$12.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Kids' Dress">
+                    <h3>Kids' Dress</h3>
+                    <p>Colorful, easy wear</p>
+                    <span>$16.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Kids' Jeans">
+                    <h3>Kids' Jeans</h3>
+                    <p>Stretch fit, durable</p>
+                    <span>$19.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1503457574465-494bba506e52?auto=format&fit=crop&w=400&q=80" alt="Kids' Hoodie">
+                    <h3>Kids' Hoodie</h3>
+                    <p>Warm fleece, pullover</p>
+                    <span>$15.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Kids' Shorts">
+                    <h3>Kids' Shorts</h3>
+                    <p>Comfy, easy movement</p>
+                    <span>$10.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+            </div>
+        </section>
+        <section id="more-products">
+            <h2>More Products</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Men's Polo Shirt">
+                    <h3>Men's Polo Shirt</h3>
+                    <p>Smart casual, breathable</p>
+                    <span>$24.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Women's Blouse">
+                    <h3>Women's Blouse</h3>
+                    <p>Chic, lightweight</p>
+                    <span>$21.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Men's Shorts">
+                    <h3>Men's Shorts</h3>
+                    <p>Casual, summer wear</p>
+                    <span>$18.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Women's Pants">
+                    <h3>Women's Pants</h3>
+                    <p>Stretch fit, stylish</p>
+                    <span>$27.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1503457574465-494bba506e52?auto=format&fit=crop&w=400&q=80" alt="Kids' Jacket">
+                    <h3>Kids' Jacket</h3>
+                    <p>Warm, windproof</p>
+                    <span>$22.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Men's Cap">
+                    <h3>Men's Cap</h3>
+                    <p>Adjustable, cotton</p>
+                    <span>$9.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Women's Scarf">
+                    <h3>Women's Scarf</h3>
+                    <p>Soft, colorful</p>
+                    <span>$12.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1503457574465-494bba506e52?auto=format&fit=crop&w=400&q=80" alt="Kids' Cap">
+                    <h3>Kids' Cap</h3>
+                    <p>Fun, adjustable</p>
+                    <span>$7.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Men's Socks">
+                    <h3>Men's Socks</h3>
+                    <p>Pack of 3, cotton</p>
+                    <span>$8.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Women's Socks">
+                    <h3>Women's Socks</h3>
+                    <p>Pack of 3, colorful</p>
+                    <span>$8.99</span>
+                    <button>Add to Cart</button>
+                    <button class="view-btn">View</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Clothify. All rights reserved.</p>
+    </footer>
+    <div id="product-modal" class="product-modal">
+        <div class="product-modal-content">
+            <span id="close-product-modal" class="close-product-modal">&times;</span>
+            <img id="modal-product-img" src="" alt="Product Image">
+            <h3 id="modal-product-name"></h3>
+            <p id="modal-product-desc"></p>
+            <span id="modal-product-price"></span>
+            <button id="purchase-btn">Purchase</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Clothify</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .payment-container {
+            max-width: 400px;
+            margin: 3rem auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 2rem 2rem 1.5rem 2rem;
+        }
+        .payment-container h2 {
+            text-align: center;
+        }
+        .payment-container label {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .payment-container input {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 0.5rem;
+        }
+        .payment-container button {
+            width: 100%;
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.75rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .payment-container button:hover {
+            background: #e55b50;
+        }
+        .success-message {
+            color: #27ae60;
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Checkout</h2>
+        <form id="payment-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+            <label for="card">Card Number</label>
+            <input type="text" id="card" name="card" maxlength="19" required>
+            <label for="expiry">Expiry</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" maxlength="4" required>
+            <button type="submit">Pay Now</button>
+        </form>
+        <div class="success-message" id="success-message" style="display:none;">Payment Successful! Thank you for your purchase.</div>
+    </div>
+    <script src="payment.js"></script>
+</body>
+</html> 
